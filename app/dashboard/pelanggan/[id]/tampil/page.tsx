@@ -58,6 +58,17 @@ export default async function Page(props: { params: { id: string } }) {
                 <td className="py-3 px-4 font-medium text-green-700">
                   <span className="inline-flex items-center">
                     <span className="material-icons text-green-600 mr-2"></span>
+                    No hp
+                  </span>
+                </td>
+                <td className="py-3 px-4 text-green-900 border-l-2 border-green-300">
+                  {pelanggan.no_hp}
+                </td>
+              </tr>
+              <tr className="border-b border-green-300">
+                <td className="py-3 px-4 font-medium text-green-700">
+                  <span className="inline-flex items-center">
+                    <span className="material-icons text-green-600 mr-2"></span>
                     Alamat
                   </span>
                 </td>
