@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-// import DKLogo from '@/public/logodk.png';
 
 export default function Page() {
   return (
@@ -8,19 +7,20 @@ export default function Page() {
       className="flex min-h-screen flex-col p-6 bg-cover bg-bottom bg-origin-border"
       style={{ backgroundImage: "url('/zz.png')" }}
     >
-      {/* <div className="flex items-center justify-center h-screen">
-        <img src="/logodk.png" alt="DK Logo" className="w-32 rounded-full md:w-64" />
-        </div> */}
-      
-      <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
-        {/* Tambahkan konten sesuai kebutuhan */}
+      {/* Kontainer utama dengan tata letak fleksibel */}
+      <div className="mt-4 flex grow flex-col gap-4 md:flex-row md:gap-8">
+        {/* Tambahkan konten sesuai kebutuhan di sini jika perlu */}
       </div>
-      <Link
-              href="https://last-lime.vercel.app/login"
-              className="gap-5 self-start rounded-lg px-10 mx-auto bg-yellow-900 opacity-80 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-500 md:text-base border-2 border-gray-50"
-            >
-              <span>Login</span>
-            </Link>
+
+      {/* Tombol Login dengan tampilan yang responsif */}
+      <div className="mt-4 flex justify-center">
+        <Link
+          href="https://last-lime.vercel.app/login"
+          className="gap-2 self-center rounded-lg px-6 py-3 bg-yellow-900 opacity-90 text-sm font-medium text-white transition-colors hover:bg-gray-500 md:text-base md:px-10"
+        >
+          <span>Login</span>
+        </Link>
+      </div>
     </main>
   );
 }
