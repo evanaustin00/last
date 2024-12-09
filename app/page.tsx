@@ -16,7 +16,7 @@ export default function Page() {
         {/* Tambahkan konten sesuai kebutuhan */}
       </div>
       <Link
-              href="http://localhost:3000/login"
+              href="https://last-lime.vercel.app/"
               className="gap-5 self-start rounded-lg px-10 mx-auto bg-yellow-900 opacity-80 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-gray-500 md:text-base border-2 border-gray-50"
             >
               <span>Login</span>
