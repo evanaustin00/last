@@ -3,9 +3,7 @@ import  PencilIcon from '@heroicons/react/24/outline/PencilIcon.js';
  import {TrashIcon, EyeIcon} from '@heroicons/react/24/outline';
  import Link from 'next/link';
  import { deleteTransaksipembelian } from '../../lib/actionstransaksipembelian';
-
 import React from 'react';
-import { deleteTransaksipenjualan } from '../../lib/actionstransaksipenjualan';
 
 export function CreateTransaksiPembelian() {
   return (
@@ -44,7 +42,7 @@ export function TampilTransaksiPembelian({ id }: { id: string }) {
 
 
 export function DeleteTransaksipembelian({ id }: { id: string }) {
-  const deleteTransaksipembelianWithId = deleteTransaksipenjualan.bind(null, id);
+  const deleteTransaksipembelianWithId = deleteTransaksipembelian.bind(null, id);
  
   return (
     <form action={deleteTransaksipembelianWithId}>
