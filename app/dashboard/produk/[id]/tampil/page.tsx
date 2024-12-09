@@ -1,8 +1,7 @@
 // Page.tsx
 import React from 'react';
 import Breadcrumbs from '../../../../ui/stok/breadcrumbs';
-import { fetchProdukById} from '../../../../lib/data';
-import type { ProdukForm } from '../../../../lib/definitions';
+import { fetchProdukById } from '../../../../lib/data';
 
 export default async function Page(props: { params: { id: string } }) {
   const { id } = await props.params;
@@ -12,44 +11,81 @@ export default async function Page(props: { params: { id: string } }) {
     const produk = await fetchProdukById(id);
 
     if (!produk) {
-      return <p>Produk not found</p>;
+      return <p className="text-red-500 text-center mt-4">Produk tidak ditemukan</p>;
     }
 
     return (
-      <main>
+      <main className="min-h-screen bg-green-50 p-6">
         <Breadcrumbs
           breadcrumbs={[
-            { label: 'produk', href: '/dashboard/produk' },
+            { label: 'Produk', href: '/dashboard/produk' },
             {
-              label: 'Tampil produk',
+              label: 'Tampil Produk',
               href: `/dashboard/produk/${id}/tampil`,
               active: true,
             },
           ]}
         />
-        <div className="rounded-md bg-white p-6 shadow-lg max-w-lg mx-auto">
-          <h2 className="text-xl font-semibold mb-4">Detail Stok</h2>
-          <div className="mb-2">
-            <span className="font-medium text-gray-700">Id Stok: </span>
-            <span>{produk.id_produk}</span>
-          </div>
-          <div className="mb-2">
-            <span className="font-medium text-gray-700">Nama Barang: </span>
-            <span>{produk.nama_produk}</span>
-          </div>
-          <div className="mb-2">
-            <span className="font-medium text-gray-700">Harga Barang: </span>
-            <span>{produk.harga_produk}</span>
-          </div>
-          {/* <div className="mb-2">
-            <span className="font-medium text-gray-700">Jumlah Barang: </span>
-            <span>{stok.jumlah_barang}</span>
-          </div> */}
+        <div className="rounded-lg bg-white p-8 shadow-xl max-w-xl mx-auto border border-green-200">
+          <h2 className="text-2xl font-bold text-green-800 mb-6 text-center">
+            Detail Produk
+          </h2>
+          <table className="w-full border-collapse border border-green-300 rounded-md">
+            <tbody>
+              <tr className="border-b border-green-300">
+                <td className="py-3 px-4 font-medium text-green-700">
+                  <span className="inline-flex items-center">
+                    <span className="material-icons text-green-600 mr-2"></span>
+                    ID Produk
+                  </span>
+                </td>
+                <td className="py-3 px-4 text-green-900 border-l-2 border-green-300">
+                  {produk.id_produk}
+                </td>
+              </tr>
+              <tr className="border-b border-green-300">
+                <td className="py-3 px-4 font-medium text-green-700">
+                  <span className="inline-flex items-center">
+                    <span className="material-icons text-green-600 mr-2"></span>
+                    Nama Produk
+                  </span>
+                </td>
+                <td className="py-3 px-4 text-green-900 border-l-2 border-green-300">
+                  {produk.nama_produk}
+                </td>
+              </tr>
+              <tr className="border-b border-green-300">
+                <td className="py-3 px-4 font-medium text-green-700">
+                  <span className="inline-flex items-center">
+                    <span className="material-icons text-green-600 mr-2"></span>
+                    Harga Produk
+                  </span>
+                </td>
+                <td className="py-3 px-4 text-green-900 border-l-2 border-green-300">
+                  {produk.harga_produk}
+                </td>
+              </tr>
+              <tr>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="text-center mt-8">
+          <a
+            href="/dashboard/produk"
+            className="inline-block px-6 py-3 bg-green-600 text-white font-medium text-sm rounded-lg shadow-md hover:bg-green-700"
+          >
+            Kembali ke Daftar Produk
+          </a>
         </div>
       </main>
     );
   } catch (error) {
     console.error('Error fetching produk data:', error);
-    return <p>Failed to load produk data. Please try again later.</p>;
+    return (
+      <p className="text-red-500 text-center mt-4">
+        Gagal memuat data produk. Silakan coba lagi nanti.
+      </p>
+    );
   }
 }
