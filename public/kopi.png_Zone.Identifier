@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://cloudconvert.com/
+HostUrl=https://eu-central.storage.cloudconvert.com/tasks/d7a38b18-30c0-4044-bfc6-4bf9ad1bbd19/kopi.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20241101%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20241101T150508Z&X-Amz-Expires=86400&X-Amz-Signature=3fbc700a2844595cb08a5232e4f83076cfac2db2189029b167533cff55cf0048&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22kopi.png%22&response-content-type=image%2Fpng&x-id=GetObject
