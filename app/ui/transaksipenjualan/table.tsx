@@ -37,9 +37,6 @@ export default async function Transaksi_penjualanTable({
                       {formatDateToLocal(tp.tanggal_transaksi)}
                     </p>
                   </div>
-                  <p className="text-xl font-bold text-green-700">
-                      {(tp.nama_produk)}
-                    </p>
                   <div className="flex gap-2">
                     <TampilTransaksiPenjualan id={tp.id_transaksi_penjualan} />
                     <DeleteTransaksipenjualan id={tp.id_transaksi_penjualan} />
@@ -57,7 +54,6 @@ export default async function Transaksi_penjualanTable({
                 <th scope="col" className="px-4 py-3 text-left">Nomor HP</th>
                 <th scope="col" className="px-4 py-3 text-left">Total Transaksi</th>
                 <th scope="col" className="px-4 py-3 text-left">Tanggal</th>
-                <th scope="col" className="px-4 py-3 text-right">nama produk</th>
                 <th scope="col" className="px-4 py-3 text-right">Aksi</th>
               </tr>
             </thead>
@@ -71,7 +67,6 @@ export default async function Transaksi_penjualanTable({
                   <td className="px-4 py-3">{tp.no_hp}</td>
                   <td className="px-4 py-3">{(tp.total_transaksi)}</td>
                   <td className="px-4 py-3">{formatDateToLocal(tp.tanggal_transaksi)}</td>
-                  <td className="px-4 py-3">{tp.nama_produk}</td>
                   <td className="px-4 py-3 text-right">
                     <div className="flex justify-end gap-2">
                       <TampilTransaksiPenjualan id={tp.id_transaksi_penjualan}/>
