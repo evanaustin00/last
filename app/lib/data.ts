@@ -13,8 +13,8 @@ const ITEMS_PER_PAGE = 10;
 export async function fetchLatestTransaksiPenjualan() {
   try {
     const data = await sql<LatestTransaksiPenjualanRaw>` 
-      SELECT  Transaksi_penjualan.tanggal_transaksi, transaksi_penjualan.total_transaksi, pelanggan.nama_pelanggan
-      FROM Transaksi_penjualan 
+      SELECT  transaksi_penjualan.tanggal_transaksi, transaksi_penjualan.total_transaksi, pelanggan.nama_pelanggan
+      FROM transaksi_penjualan 
       JOIN pelanggan on transaksi_penjualan.id_pelanggan = pelanggan.id_pelanggan::text
       ORDER BY Transaksi_penjualan.tanggal_transaksi DESC 
       LIMIT 5`;
